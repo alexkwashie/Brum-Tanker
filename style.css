@@ -64,3 +64,37 @@ body{
     width: 100%;
     height: 90%;
 }
+
+.base{
+    position: absolute;
+    top: 250px;
+    left: 430px;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    margin: auto;
+}
+
+.box{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: gray;
+    border-radius: 4px;
+    -moz-transition:all 0.1s ease-in-out;
+    transition:all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -o-transition:all 0.1s ease-in-out;
+}
+
+.turets{
+    position: absolute;
+    border-radius: 2px;
+    top: 12px;
+    left: 14px;
+    width: 25px;
+    height: 7px;
+    background-color: gold;
+}
