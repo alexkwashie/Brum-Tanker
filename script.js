@@ -101,8 +101,14 @@ const startGame = () => {
         let shots = document.querySelectorAll('.bullets');
 
         for (let shot of shots){
-            shot.style.top = shot.offsetTop + shot.movex + 'px';
+            if (shot.offsetTop > 600 || shot.offsetTop < 0 || shot.offsetLeft >800 || shot.offsetLeft < 0){
+                //remove from parent class
+                shot.parentNode.removeChild(shot);
+            } else{
+                shot.style.top = shot.offsetTop + shot.movex + 'px';
             shot.style.left = shot.offsetLeft + shot.movey + 'px';
+            }
+
         }
     }
 
