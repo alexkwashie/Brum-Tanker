@@ -13,13 +13,16 @@ let player;
 //to animate the frame constantly
 let animateGame;
 
-//Get center point of tank
-const box = document.querySelector('.box');
+//Get base of tank
+const box = document.querySelector('.base');
 
+//use to get middle point(axis) of the tank
 const boxCenter = [box.offsetLeft + (box.offsetWidth / 2),
     box.offsetTop + (box.offsetHeight / 2)
 ];
 //access by: boxCenter[0],boxCenter[1]
+
+console.log(boxCenter)
 
 
 //add a mousedown Event to shoot
@@ -34,12 +37,14 @@ const mouseDown = (e) => {
 const getDeg = (e) => {
     let angle = Math.atan2(e.clientX - boxCenter[0], -(e.clientY - boxCenter[1]));
     //multiply by 180/pi to get angles
+    console.log(angle)
     return angle * (180 / Math.PI);
 }
 
 const mousePosition = (e) => {
-    let mouseAngle = getDeg(e)
-    console.log(mouseAngle);
+    let deg = getDeg(e)
+    console.log(deg);
+    box.style.transform = `rotate(${deg}deg)`;
 }
 
 container.addEventListener('mousemove', mousePosition);
@@ -62,9 +67,14 @@ const startGame = () => {
     //start game  session
     const gameSession = () => {
         if (gamePlay) {
+
             //move shots
             //update dashboard
             //move enemy
+
+            //Change tank color
+            box.style.background = 'green';
+            box.style.borderRadius = '5px';
             animateGame = requestAnimationFrame(gameSession);
         }
     }

@@ -75,11 +75,12 @@ body{
     left: 430px;
     width: 50px;
     height: 50px;
-    background-color: red;
+    background-color: brown;
     margin: auto;
 }
 
 .box{
+    transform: rotate(0deg);
     position: absolute;
     top: 10px;
     left: 10px;
@@ -97,9 +98,9 @@ body{
 .turets{
     position: absolute;
     border-radius: 2px;
-    top: 11px;
-    left: 14px;
-    width: 25px;
-    height: 7px;
+    top: -18px;
+    left: 11px;
+    width: 7px;
+    height: 33px;
     background-color: gold;
 }
