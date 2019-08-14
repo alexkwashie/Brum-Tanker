@@ -106,3 +106,13 @@ body{
     height: 33px;
     background-color:gold;
 }
+
+
+.bullets{
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: red;
+    z-index: 1;
+    border-radius: 50px;
+}
