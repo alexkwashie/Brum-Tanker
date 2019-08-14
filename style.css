@@ -100,7 +100,7 @@ body{
 .turets{
     position: absolute;
     border-radius: 2px;
-    top: -18px;
+    top: 18px;
     left: 11px;
     width: 7px;
     height: 33px;
