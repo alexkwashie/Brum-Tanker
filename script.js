@@ -16,6 +16,9 @@ let animateGame;
 //Get base of tank
 const box = document.querySelector('.base');
 
+const tanker = document.querySelector('.box');
+const turet = document.querySelector('.turets');
+
 //use to get middle point(axis) of the tank
 const boxCenter = [box.offsetLeft + (box.offsetWidth / 2),
     box.offsetTop + (box.offsetHeight / 2)
@@ -37,14 +40,19 @@ const mouseDown = (e) => {
 const getDeg = (e) => {
     let angle = Math.atan2(e.clientX - boxCenter[0], -(e.clientY - boxCenter[1]));
     //multiply by 180/pi to get angles
-    console.log(angle)
     return angle * (180 / Math.PI);
 }
 
 const mousePosition = (e) => {
     let deg = getDeg(e)
-    console.log(deg);
+    //console.log(deg);
     box.style.transform = `rotate(${deg}deg)`;
+    //support for other browsers
+    box.style.webkitTransform = `rotate(${deg}deg)`;
+    box.style.mozTransform = `rotate(${deg}deg)`;
+    box.style.msTransform = `rotate(${deg}deg)`;
+    box.style.oTransform = `rotate(${deg}deg)`;
+
 }
 
 container.addEventListener('mousemove', mousePosition);
@@ -75,6 +83,8 @@ const startGame = () => {
             //Change tank color
             box.style.background = 'green';
             box.style.borderRadius = '5px';
+            tanker.style.height = '40px';
+            turet.style.backgroundImage = 'linear-gradient(red, yellow,green, blue)';
             animateGame = requestAnimationFrame(gameSession);
         }
     }

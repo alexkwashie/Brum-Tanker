@@ -54,6 +54,8 @@ body{
 }
 
 .btnStart{
+    position: relative;
+    top:30px;
     background-color: brown;
     font-size: 20px;
     border:1px solid
@@ -102,5 +104,5 @@ body{
     left: 11px;
     width: 7px;
     height: 33px;
-    background-color: gold;
+    background-color:gold;
 }
