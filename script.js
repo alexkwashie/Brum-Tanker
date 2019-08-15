@@ -19,6 +19,7 @@ const box = document.querySelector('.base');
 const tanker = document.querySelector('.box');
 const turet = document.querySelector('.turets');
 
+const icon = ["img1","img2","img3","img4"];
 
 
 //use to get middle point(axis) of the tank
@@ -111,6 +112,30 @@ const startGame = () => {
 
         }
     }
+
+    //random number gen
+    const randGen = (num)=>{
+        return Math.ceil(Math.random()*num);
+    }
+
+    const makeEnemies = (num)=>{
+         let div = document.createElement('div');
+         let myBugs = `img${randGen(icon.length)}`;
+         div.setAttribute('class', 'enemy')
+         div.innerHTML=`<img src="img/${myBugs}.jpg" class="enemy">`;
+         container.appendChild(div);
+
+    }
+
+    //create emi
+    const setupEnemies = (num)=>{
+        for(let x=0;x<num;x++){
+            makeEnemies();
+        }
+    }
+
+    //Set up enemies
+    setupEnemies(10)
 
 
 

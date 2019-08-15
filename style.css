@@ -116,3 +116,13 @@ body{
     z-index: 1;
     border-radius: 50px;
 }
+
+.enemy{
+    position: absolute;
+    padding:5px;
+    width: 5px;
+    text-align:center;
+    border:5px dotted red;
+    background-color: gray;
+    border-radius: 5px;
+}
